@@ -1,24 +1,22 @@
-//display the current date
+
 let currentDay = $("#currentDay");
 
+//display the current date
 currentDay = moment().format("dddd, MMMM Do, YYYY");
 $("#currentDay").text(currentDay);
 
+//highlight the input with colors depending on what time it is
+const currentHour = Date.now().getHours();
 
+$(".row").each(function() {
+	let val = +$(this).attr("id").replace("hour", "");
 
+	if (val < currentHour) {
+		$(this).find(".input").addClass(".past");
+	} else if (val > currentHour) {
+		$(this).find(".input").addClass(".future");
+	} else if(val === currentHour) {
+		$(this).find(".input").addClass(".present");
+	} 
+	});
 
-
-
-// var currentHour = Date.now().getHours();
-// $('.colorcode').each(function(){
-//     var val = parseInt($(this).prop('id'));
-//     if(val > currentHour && val < currentHour+6){
-//         $(this).css('background-color','Blue');
-//     }else if(val < currentHour && val > currentHour-6){
-//         $(this).css('background-color','Red');
-//     }else if(val === currentHour){
-//         $(this).css('background-color','Green');
-//     }else{
-//         $(this).css('background-color','White');
-//     }
-// });
