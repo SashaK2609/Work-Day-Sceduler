@@ -24,3 +24,5 @@ N/A
 
 ### License
 Please refer to the LICENSE in the repo.
+
+This Project was deployed on GitHub Pages https://sashak2609.github.io/Work-Day-Sceduler/
